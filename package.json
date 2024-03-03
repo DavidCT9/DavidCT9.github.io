@@ -3,7 +3,7 @@
     "node": ">=18.18.0 <19.0.0"
   },
   "name": "az-website",
-  "homepage": "https://DavidCT9.github.io",
+  "homepage": "https://davidct9.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
