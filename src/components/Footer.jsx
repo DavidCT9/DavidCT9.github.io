@@ -16,7 +16,7 @@ function Footer() {
                         <span className="mb-1 md-0" style={{color:'white', fontSize:'large'}}>Empresarial © {year}</span>
                     </div>
 
-                    <ul className="mb-1 nav justify-content-center mr-4 ml-4">
+                    <ul className="mb-1 nav justify-content-center mr-4 ml-4 ">
                         <li className="nav-item footer-item"><NavLink to='/' className="nav-link px-2 " style={{color:'white'}}>Inicio</NavLink></li>
                         <li className="nav-item footer-item"><NavLink to='/Catalogo' className="nav-link px-2 " style={{color:'white'}}>Catalogo</NavLink></li>
                         <li className="nav-item footer-item"><NavLink to='/Contacto' className="nav-link px-2 " style={{color:'white'}}>Contacto</NavLink></li>
@@ -24,10 +24,10 @@ function Footer() {
                     </ul>
 
 
-                    <ul className="nav mb-1  ml-4 mr-4 col-md-4 justify-content-center list-unstyled d-flex">
-                        <li className="ms-3"><a className="text-body-secondary" href="https://api.whatsapp.com/send?phone=3311662772" target="_blank" rel="noopener noreferrer"><img src="img/Whats.svg" className="bi" width="24" height="24" /></a></li>
-                        <li className="ms-3"><a className="text-body-secondary" href="#" target="_blank" rel="noopener noreferrer"><img src="img/Instagram.svg" className="bi" width="24" height="24" /></a></li>
-                        <li className="ms-3"><a className="text-body-secondary" href="#" target="_blank" rel="noopener noreferrer"><img src="img/Face.svg" className="bi" width="26" height="26" /></a></li>
+                    <ul className="align-items-center nav mb-1  ml-4 col-md-4 justify-content-center list-unstyled d-flex ">
+                        <li className="mr-3"><a className="text-body-secondary" href="https://api.whatsapp.com/send?phone=3311662772" target="_blank" rel="noopener noreferrer"><img src="img/Whats.svg" className="bi" width="24" height="24" /></a></li>
+                        <li className="mr-3"><a className="text-body-secondary" href="#" target="_blank" rel="noopener noreferrer"><img src="img/Instagram.svg" className="bi" width="24" height="24" /></a></li>
+                        <li className="mr-3"><a className="text-body-secondary" href="#" target="_blank" rel="noopener noreferrer"><img src="img/Face.svg" className="bi" width="26" height="26" /></a></li>
                     </ul>
                 </footer>
             </div>
