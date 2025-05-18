@@ -6,7 +6,7 @@ export interface Color {
 export interface Product {
   id: string
   name: string
-  category: string
+  category: string[]
   description: string
   images: string[]
   colors?: Color[]

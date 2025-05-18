@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { productData } from "@/data/products"
 
 // Define product categories
-const categories = ["Todos", "Camisas", "Pantalones", "Chalecos", "Batas", "Accesorios"]
+const categories = ["Todos", "Camisas", "Playeras", "Sudaderas", "Pantalones" ,"Business", "Office"]
 
 export default function CatalogPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -21,8 +21,11 @@ export default function CatalogPage() {
   useEffect(() => {
     const filtered = productData.filter((product) => {
       const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase())
-      const matchesCategory = selectedCategory === "Todos" || product.category === selectedCategory
-      return matchesSearch && matchesCategory
+      const matchesCategory =
+        selectedCategory === "Todos" ||
+        (Array.isArray(product.category)
+          ? product.category.includes(selectedCategory)
+          : product.category === selectedCategory); return matchesSearch && matchesCategory
     })
 
     setFilteredProducts(filtered)
@@ -71,11 +74,10 @@ export default function CatalogPage() {
               <Badge
                 key={category}
                 variant={selectedCategory === category ? "default" : "outline"}
-                className={`cursor-pointer ${
-                  selectedCategory === category
-                    ? "bg-wine-700 hover:bg-wine-600"
-                    : "border-gray-700 text-gray-300 hover:border-wine-500"
-                }`}
+                className={`cursor-pointer ${selectedCategory === category
+                    ? "bg-wine-700 hover:bg-wine-600 text-base" // Selected category
+                    : "border-gray-700 text-gray-300 hover:border-wine-500 text-base"
+                  }`}
                 onClick={() => setSelectedCategory(category)}
               >
                 {category}

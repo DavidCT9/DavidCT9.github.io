@@ -30,7 +30,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       </div>
 
       <div className="p-4">
-        <h3 className="mb-1 text-lg font-semibold">{product.name}</h3>
+        <h3 className="mb-1 text-lg font-bold">{product.name}</h3>
         <p className="mb-3 text-sm text-gray-600">{product.category}</p>
 
         {/* Color options */}

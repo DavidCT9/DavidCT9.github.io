@@ -18,7 +18,7 @@ const ImageMagnifier = ({
   alt,
   width,
   height,
-  magnifierSize = 150,
+  magnifierSize = 100,
   zoomLevel = 2.5,
   className,
 }: ImageMagnifierProps) => {

@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button"
 import ImageCarousel from "@/components/ImageCarousel"
 
 export default function HomePage() {
-  const heroImages = ["/images/BusinessImg/1.svg", "/images/BusinessImg/2.svg", "/images/BusinessImg/3.svg"]
+  const heroImages = ["/images/BusinessImg/1.svg", "/images/BusinessImg/2.svg", "/images/BusinessImg/3.svg",
+    "/images/BusinessImg/4.svg", "/images/BusinessImg/5.svg", "/images/BusinessImg/6.svg"]
 
   return (
     <div className="flex flex-col">
@@ -32,7 +33,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="absolute inset-0 -z-10">
-          <img src="/images/BusinessImg/1.svg" alt="Uniformes empresariales" className="h-full w-full object-cover" />
+          <img src="/images/BusinessImg/5.svg" alt="Uniformes empresariales" className="h-full w-full object-cover" />
         </div>
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
           <a href="#features" className="text-white opacity-80 hover:opacity-100">
@@ -158,7 +159,20 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-background py-24">
+
+      <section className="bg-black py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-slideUp">
+            <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+              Los datos <span className="text-wine-400">no mienten</span>
+            </h2>
+            <div className="mt-4 h-1 w-20 bg-wine-600 mx-auto"></div>
+            <p className="mx-auto mt-6 max-w-2xl text-center text-gray-400">
+              LLevamos años en la industria y estamos orgullosos de contar con la confianza de empresas de todo el pais.
+            </p>
+          </div>
+        </div>
+
         <div className="container mx-auto px-4">
           <div className="grid gap-8 md:grid-cols-4">
             <div className="text-center">
@@ -181,88 +195,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-black py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-slideUp">
-            <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">
-              Lo que dicen <span className="text-wine-400">nuestros clientes</span>
-            </h2>
-            <div className="mt-4 h-1 w-20 bg-wine-600 mx-auto"></div>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="rounded-xl bg-secondary p-8 shadow-lg relative">
-              <div className="absolute -top-5 left-8 text-wine-500 text-6xl opacity-30">"</div>
-              <div className="mb-6 flex">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <svg key={star} className="h-5 w-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="mb-6 text-gray-300">
-                "Los uniformes que nos proporcionaron son de excelente calidad y nuestro personal está muy satisfecho
-                con la comodidad y durabilidad."
-              </p>
-              <div className="flex items-center">
-                <div className="h-12 w-12 rounded-full bg-wine-800 flex items-center justify-center text-white font-bold text-xl">
-                  MR
-                </div>
-                <div className="ml-4">
-                  <p className="font-semibold text-white">María Rodríguez</p>
-                  <p className="text-sm text-gray-400">Gerente de Recursos Humanos</p>
-                </div>
-              </div>
-            </div>
-            <div className="rounded-xl bg-secondary p-8 shadow-lg relative">
-              <div className="absolute -top-5 left-8 text-wine-500 text-6xl opacity-30">"</div>
-              <div className="mb-6 flex">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <svg key={star} className="h-5 w-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="mb-6 text-gray-300">
-                "El servicio de atención al cliente es excepcional. Siempre están dispuestos a ayudar y resolver
-                cualquier consulta de manera rápida y eficiente."
-              </p>
-              <div className="flex items-center">
-                <div className="h-12 w-12 rounded-full bg-wine-800 flex items-center justify-center text-white font-bold text-xl">
-                  CM
-                </div>
-                <div className="ml-4">
-                  <p className="font-semibold text-white">Carlos Méndez</p>
-                  <p className="text-sm text-gray-400">Director de Operaciones</p>
-                </div>
-              </div>
-            </div>
-            <div className="rounded-xl bg-secondary p-8 shadow-lg relative">
-              <div className="absolute -top-5 left-8 text-wine-500 text-6xl opacity-30">"</div>
-              <div className="mb-6 flex">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <svg key={star} className="h-5 w-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="mb-6 text-gray-300">
-                "La personalización de los uniformes superó nuestras expectativas. El bordado de nuestro logo quedó
-                perfecto y los colores son exactamente los de nuestra marca."
-              </p>
-              <div className="flex items-center">
-                <div className="h-12 w-12 rounded-full bg-wine-800 flex items-center justify-center text-white font-bold text-xl">
-                  LT
-                </div>
-                <div className="ml-4">
-                  <p className="font-semibold text-white">Laura Torres</p>
-                  <p className="text-sm text-gray-400">Gerente de Marketing</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Process Section */}
       <section className="bg-gradient-to-b from-background to-black py-24">

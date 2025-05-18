@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import emailjs from "emailjs-com"
 
 import { useState } from "react"
 import { Mail, MapPin, Phone, Clock, Facebook, Instagram, Twitter } from "lucide-react"
@@ -25,12 +26,23 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault()
+  setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+  try {
+    const result = await emailjs.send(
+      "service_g16rbu1", // 👉 tu ID de servicio
+      "template_eyryzph", // 👉 tu ID de plantilla
+      {
+        from_name: formData.name,
+        reply_to: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        message: formData.message,
+      },
+      "jklAb_u4-TUOHhCxJ" // 👉 tu public key
+    )
 
     toast({
       title: "Mensaje enviado",
@@ -44,9 +56,19 @@ export default function ContactPage() {
       company: "",
       message: "",
     })
-
+  } catch (error) {
+    console.error("Error al enviar el correo:", error)
+    toast({
+      title: "Error",
+      description: "No se pudo enviar el mensaje. Intenta más tarde o por otro medio.",
+      variant: "destructive",
+    })
+  } finally {
     setIsSubmitting(false)
   }
+}
+console.log("Form data:", formData)
+
 
   return (
     <div className="bg-background pt-24 min-h-screen">
@@ -78,11 +100,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium text-white">Dirección</h3>
                     <p className="mt-1 text-gray-400">
-                      Av. Insurgentes Sur 1234
+                      Online
                       <br />
-                      Col. Del Valle, 03100
+                      Guadalajara, México 
                       <br />
-                      Ciudad de México, México
+                      Contactanos por WhatsApp
                     </p>
                   </div>
                 </div>
@@ -93,8 +115,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-white">Teléfono</h3>
-                    <p className="mt-1 text-gray-400">+52 55 1234 5678</p>
-                    <p className="mt-1 text-gray-400">+52 55 8765 4321</p>
+                    <p className="mt-1 text-gray-400">+52 33 1166 2772</p>
+
                   </div>
                 </div>
 
@@ -104,8 +126,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-white">Correo Electrónico</h3>
-                    <p className="mt-1 text-gray-400">info@azempresarial.com</p>
-                    <p className="mt-1 text-gray-400">ventas@azempresarial.com</p>
+                    <p className="mt-1 text-gray-400">clientes@a-zempresarial.com</p>
                   </div>
                 </div>
 

@@ -16,7 +16,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <div
-      className="group relative overflow-hidden rounded-lg border bg-white shadow-sm transition-all hover:shadow-md"
+      className="group relative overflow-hidden rounded-lg border bg-black shadow-sm transition-all hover:shadow-md"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -31,7 +31,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
       <div className="p-4">
         <h3 className="mb-1 text-lg font-semibold">{product.name}</h3>
-        <p className="mb-3 text-sm text-gray-600">{product.category}</p>
+        <p className="mb-3 text-sm text-gray-600">{product.category[0]+" - "+product.category[1]}</p>
+
 
         {/* Color options */}
         {product.colors && product.colors.length > 0 && (
