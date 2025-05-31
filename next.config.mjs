@@ -3,8 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   output: 'export',
-  assetPrefix: '/',
+  assetPrefix: './',
   basePath: '',
+  trailingSlash: true, // helps avoid 404s on nested routes
 
   eslint: {
     ignoreDuringBuilds: true,
